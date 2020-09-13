@@ -2,6 +2,7 @@
 
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 from os import makedirs, remove
+from os.path import join
 from shutil import copy, move, rmtree
 from time import sleep
 from watchdog.observers import Observer
@@ -45,7 +46,7 @@ class Handler(FileSystemEventHandler):
     def on_modified(self, event):
         print("Modified", event)
         if isinstance(event, FileModifiedEvent):
-            copy(event.src_path, self.dst)
+            copy(event.src_path, join(self.dst, event.src_path.replace(self.src, "")))
 
     def on_moved(self, event):
         print("Moved", event)
