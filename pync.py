@@ -65,7 +65,7 @@ def main():
         prog="pync",
         usage=None,
         description="\n".join(
-            ["Keep two directories in sync with Python", "Version 1.0"]
+            ["Keep two directories in sync with Python", "Version 1.1"]
         ),
         epilog="\n".join(
             [
