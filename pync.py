@@ -1,5 +1,21 @@
 #!/usr/bin/env python3
 
+"""Keep two directories in sync with Python
+
+Usage: pync SRC DST [--no-recursion]
+
+Install:
+
+```bash
+cp cp pync.py ~/.local/bin/pync
+chmod u+x ~/.local/bin/pync
+```
+
+"""
+
+__author__ = "mastro-elfo"
+__version__ = "1.1.1"
+
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 from os import makedirs, remove
 from os.path import join
@@ -65,7 +81,7 @@ def main():
         prog="pync",
         usage=None,
         description="\n".join(
-            ["Keep two directories in sync with Python", "Version 1.1"]
+            ["Keep two directories in sync with Python", f"Version {__version__}"]
         ),
         epilog="\n".join(
             [
